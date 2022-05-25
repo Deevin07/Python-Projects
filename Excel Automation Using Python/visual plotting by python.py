@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue May 24 22:28:43 2022
 
-@author: Vineet
+@author: Vineet Dusa
+
+@linked in = https://www.linkedin.com/in/vineet-dusa-a266321b5/
+
 """
 
 import pandas as pd
