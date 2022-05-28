@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat May 28 13:29:02 2022
 
 @author: Vineet
 """
