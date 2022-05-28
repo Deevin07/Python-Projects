@@ -1,9 +1,3 @@
-# =============================================================================
-# Import OHLCV data and calculate RSI technical indicators
-# Author : Mayank Rasu (http://rasuquant.com/wp/)
-
-# Please report bug/issues in the Q&A section
-# =============================================================================
 
 # Import necesary libraries
 import yfinance as yf
