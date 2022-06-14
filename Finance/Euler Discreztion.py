@@ -23,7 +23,7 @@ r = 0.025          #risk free return
 stdev = log_return.std() * 250 ** 0.5
 print('Standard dev',stdev)
 
-stdev = stdev.values      #cnverting it to np array
+stdev = stdev.values      #converting it to np array
 
 T = 1.0                            #time horizon
 t_intervals = 250
