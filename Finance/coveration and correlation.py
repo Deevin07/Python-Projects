@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat May 28 20:15:34 2022
+calculating coveriance and correlation
 
 @author: Vineet
 """
