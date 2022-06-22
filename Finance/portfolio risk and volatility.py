@@ -11,7 +11,7 @@ import pandas_datareader.data as web
 
 
 
-tickers  = ['PG','BEI.DE']          # the tickers you want 
+tickers  = ['KOTAKBANK.NS','^NSEBANK']          # the tickers you want 
 sec_data = pd.DataFrame()
 
 for t in tickers:
@@ -29,4 +29,5 @@ port_var = np.dot(weights.T,np.dot(sec_return.cov() * 250, weights ))        #po
 
 port_vol = np.dot(weights.T,np.dot(sec_return.cov() * 250, weights )) ** 0.5   #portfolio volatility
 
-print (str(round(port_vol,5)*100)+'%')                                   
+print('Portfolio varience is  = '+(str(round(port_var,5)*100)+'%'))
+print ('Portfolio volatility is  = '+(str(round(port_vol,5)*100)+'%'))        #portfolio volatility                           
