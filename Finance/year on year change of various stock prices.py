@@ -23,14 +23,4 @@ df_yoy = df.resample('Y').last().pct_change()
 
 print(df_yoy)
 
-# =============================================================================
-# initial_value = df['Close'].iloc[0]
-# final_value = df['Close'].iloc[-1]
-# overall_pct_change = (final_value / initial_value - 1) * 100
-# 
-# # Print the result
-# print('Overall % change: {:.2f}%'.format(overall_pct_change))
-# 
-# 
-# =============================================================================
 
