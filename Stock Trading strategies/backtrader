@@ -1,0 +1,56 @@
+import pandas as pd
+import backtrader as bt
+import os
+from S1 import TestStrategy #file name and the class of the stratergy
+import matplotlib.pyplot as plt
+plt.style.use('fivethirtyeight') 
+from IPython import get_ipython
+from IPython.display import Image
+
+
+#this is basic import part
+os.chdir('C:\\Users\\Vineet\\Downloads')
+df = pd.read_csv('3131.csv',index_col=0,parse_dates=True)               
+
+#getting the feed
+feed = bt.feeds.PandasData(dataname = df)
+cerebro = bt.Cerebro()
+
+#setting teh variables
+cerebro.broker.setcash(100000)
+cerebro.adddata(data = feed,name = 'Bank Nifty')
+cerebro.addstrategy(TestStrategy)
+
+#printing them out 
+print('Strarting value of the portfolio',cerebro.broker.getvalue()) 
+cerebro.run()
+print('Ending Value of the portfolio',cerebro.broker.get_value())
+
+cerebro.plot()
+
+
+#####################################################
+
+
+import backtrader as bt
+
+class TestStrategy(bt.Strategy):
+    
+    def __init__(self):
+        self.counter = 0 
+        sma1 = bt.ind.SMA(period = 10) #fast moving average
+        sma2 = bt.ind.SMA(period = 30)  #slow moving average
+        self.crossover = bt.ind.CrossOver(sma1,sma2) #crossover signal
+        
+        
+    def next(self):
+        self.counter = self.counter + 1
+        
+        if not self.position:
+            if self.crossover == 1:
+                print("BUY",self.data.datetime.date(0))
+        else:
+            if self.crossover == -1:
+                print('SELL',self.data.datetime.date(0))
+                self.sell()
+            
