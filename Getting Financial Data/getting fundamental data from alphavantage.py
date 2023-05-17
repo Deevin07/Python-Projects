@@ -6,7 +6,7 @@ Created on Sun Oct 30 11:48:21 2022
 """
 
 from alpha_vantage.fundamentaldata import FundamentalData
-Api_key = '7398IW3YVLO8TTYE' 
+Api_key = 'ENTER YOU API KEY' 
 
 fd = FundamentalData(key=Api_key, output_format='pandas')
 
