@@ -40,6 +40,8 @@ class TestStrategy(bt.Strategy):
         self.counter = 0 
         sma1 = bt.ind.SMA(period = 10) #fast moving average
         sma2 = bt.ind.SMA(period = 30)  #slow moving average
+        self.sma1 = sma1
+        self.sma2 = sma2
         self.crossover = bt.ind.CrossOver(sma1,sma2) #crossover signal
         
         
